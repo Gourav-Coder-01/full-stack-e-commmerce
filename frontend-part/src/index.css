@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+a.active hr{
+      display: block;
+}
+/* agar kisi ancor tag me active class hogi oske hr tag ko display block kr do */
+
+::-webkit-scrollbar{
+      display: none;
+}
+
+@media (max-width:640px){
+      a.active{
+            background-color: black;
+            color: white;
+      }
+}
+
+/* agar width 640px tak hai tabhi ye show hoga because oske baad to side menu hide ho jayega */
+ 
