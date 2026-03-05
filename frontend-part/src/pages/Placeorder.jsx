@@ -77,10 +77,6 @@ const Placeorder = () => {
           }
 
         break;
-        
-        case 'razorpay':
-          toast.error("Currently Unavailable")
-          break;
 
         default:
           break;
