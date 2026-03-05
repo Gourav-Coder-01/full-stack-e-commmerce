@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { ShopContext } from '../context/Shopcontext'
+import { ShopContext } from '../context/ShopContext'
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios'; // it is not a secure method to verify stripe payment instead of it need to use webhooks which not covered in project
