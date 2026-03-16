@@ -79,7 +79,7 @@ const Placeorder = () => {
         break;
 
         case 'razorpay':
-          toast.error("Currently Unavailable")
+          toast.error("Razorpay Service currently Unavailable")
           break;
 
         default:
@@ -199,16 +199,28 @@ const Placeorder = () => {
 
           {/* ---------------Payment Methods Selection----------- */}
 
-          <div className="flex gap-3 flex-col lg:flex-row ">
+          <div className="flex items-start gap-3 flex-col lg:flex-row ">
             <div onClick={()=>setMethod('stripe')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer border-gray-500">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? "bg-green-300" : ""}`}></p>
               <img className="h-5 mx-4" src={assets.stripe_logo} alt="" />
             </div>
-            <div onClick={()=>setMethod('razorpay')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer border-gray-500">
+              <div className={`flex flex-col ${method==="razorpay"?"max-lg:mb-3.5":""}`}>
+                
+                {/*-------razorpay-------  */}
+            <div onClick={()=>setMethod('razorpay')} className="flex max-xl:gap-0 items-center gap-3 border p-2 px-3 cursor-pointer border-gray-500 ">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'razorpay' ? "bg-green-300" : ""}`}></p>
-              <img className="h-5 mx-4" src={assets.razorpay_logo} alt="" />
+              <img className="h-5 mx-4 max-xl:mx-1" src={assets.razorpay_logo} alt="" />
+              </div>
+                {/*-------razorpay-------  */}
+               
+               {
+                method === 'razorpay'
+                ?
+              <p className="text-red-700 text-center h-0 max-xl:text-xs">Currently Unavailable</p>
+              :<></>
+              }
             </div>
-            <div onClick={()=>setMethod('cod')} className="flex items-center gap-3 border p-2 px-3 cursor-pointer border-gray-500">
+            <div onClick={()=>setMethod('cod')} className="flex items-center max-xl:gap-1  gap-3 border p-2 px-3 cursor-pointer border-gray-500">
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? "bg-green-300" : ""}`}></p>
               <p className="text-gray-500 text-sm font-medium mx-4">Cash On Delivery</p>
             </div>
